@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funtask</title>
+  <script src="FunTask.js"></script>
+</head>
+<body>
+  <input  id="text" type="text" placeholder="Enter Your First Name">
+  <div id="count">0</div>
+  <div id="result1">NA</div>
+<br><br>
+  <input  id="text1" type="text" placeholder="Enter Your Last Name">
+  <div id="count1">0</div>
+  <div id="result2">NA</div>
+  <br><br>
+  total sum
+  <div id="Total">0</div>
+  <div id="result3">NA</div>
+
+
+<script>
+  var sum1=0;
+  var sum2=0;
+  const numbers = {
+    'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 8, 'g': 3, 'h': 5, 'i': 1,
+    'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 7, 'p': 8, 'q': 1, 'r': 2,
+    's': 3, 't': 4, 'u': 6, 'v': 6, 'w': 6, 'x': 5, 'y': 1, 'z': 7
+  };
+  
+  document.getElementById("text").addEventListener("input", function() {
+    let str = this.value.toLowerCase();
+    sum1 = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
+    console.log(sum1);
+    count.innerHTML = sum1;
+    if(sum1>=10 && sum1<=30){
+      result1.innerHTML=`Your First Name is Lucky`
+    }
+    else{
+      result1.innerHTML=`Your First Name is Not Lucky`
+    }
+    
+    
+  });
+
+  document.getElementById("text1").addEventListener("input", function() {
+    let str = this.value.toLowerCase();
+    sum2 = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
+    console.log(sum2);
+    count1.innerHTML = sum2;
+    if(sum2>=31 && sum2<=90){
+      result2.innerHTML=`Your First Name is Lucky`
+    }
+    else{
+      result2.innerHTML=`Your First Name is Not Lucky`
+    }
+    console.log("HEllo");
+    var result = sum1 + sum2;
+    console.log(result);
+    Total.innerHTML = result;
+    if(result>=31 && result<=90){
+      result3.innerHTML=`Your First Name is Lucky`
+    }
+    else{
+      result3.innerHTML=`Your First Name is Not Lucky`
+    }
+  });
+</script>
+
+</body>
+</html>
